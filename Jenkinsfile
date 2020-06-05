@@ -4,11 +4,10 @@ pipeline {
     registryCredential = 'dockerhub'
     dockerImage = ''
   }
-  agent {
-    dockerfile true
-  }
+  agent none
   stages {
     stage('Test App') {
+      agent {dockerfile true}
       steps {
         echo "${env.NODE_NAME}"
         sh 'pwd'
