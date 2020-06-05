@@ -5,13 +5,14 @@ pipeline {
     dockerImage = ''
   }
   agent {
-    dockerfile true
+    dockerfile {
     dir 'jenkins-lab'
+    }
   }
   stages {
     stage('Test App') {
       steps {
-        sh 'python3 test.py'
+        sh 'python3 app/test.py'
       }
       post {
         always {
