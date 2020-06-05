@@ -6,6 +6,7 @@ pipeline {
   }
   agent {
     dockerfile true
+    dir 'jenkins-lab'
   }
   stages {
     stage('Test App') {
