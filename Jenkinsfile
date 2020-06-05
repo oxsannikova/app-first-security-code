@@ -10,6 +10,7 @@ pipeline {
   stages {
     stage('Test App') {
       steps {
+        echo "${env.NODE_NAME}"
         sh 'pwd'
         sh 'uname -a'
         sh 'python test.py'
