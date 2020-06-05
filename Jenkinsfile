@@ -10,6 +10,7 @@ pipeline {
   stages {
     stage('Test App') {
       steps {
+        sh 'pwd'
         sh 'python test.py'
       }
       post {
