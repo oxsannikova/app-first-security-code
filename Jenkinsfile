@@ -11,6 +11,7 @@ pipeline {
     stage('Test App') {
       steps {
         sh 'pwd'
+        sh 'uname -a'
         sh 'python test.py'
       }
       post {
