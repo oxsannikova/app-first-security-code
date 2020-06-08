@@ -4,13 +4,19 @@ pipeline {
     registryCredential = 'dockerhub'
     dockerImage = ''
   }
+  /*
   agent { 
     docker { 
       image 'python:alpine3.7'
       args '-p 5000:5000'
         } 
   }
+  */
+  agent {
+    dockerfile true
+  }
   stages {
+    /*
     stage('Build') {
       steps {
         sh 'pip install -r requirements.txt'
@@ -18,6 +24,7 @@ pipeline {
         sh 'python ./app.py'
       }
     }
+    */
     stage('Test App') {
       steps {
         echo "${env.NODE_NAME}"
