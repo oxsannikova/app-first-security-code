@@ -4,7 +4,9 @@ pipeline {
     registryCredential = 'dockerhub'
     dockerImage = ''
   }
-  agent {dockerfile true}
+  agent {
+    dockerfile true
+  }
   stages {
     stage('Test App') {
       steps {
